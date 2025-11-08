@@ -1,28 +1,66 @@
-import { useState } from 'react'
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Rooms from "./components/Rooms";
+import Facilities from "./components/Facilities";
+import Contact from "./components/Contact";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function Footer() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <footer id="about" className="bg-emerald-800 text-emerald-50">
+      <div className="max-w-7xl mx-auto px-6 py-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div>
+          <h4 className="font-semibold">Zöld Liget Panzió</h4>
+          <p className="text-emerald-100/80 mt-2 text-sm">
+            Barátságos szállás zöld környezetben, kényelmes szobákkal és
+            házias reggelivel. Várjuk szeretettel!
+          </p>
+        </div>
+        <div>
+          <h4 className="font-semibold">Hasznos</h4>
+          <ul className="mt-2 space-y-1 text-sm text-emerald-100/80">
+            <li><a href="#rooms" className="hover:text-white">Szobák és árak</a></li>
+            <li><a href="#contact" className="hover:text-white">Foglalás</a></li>
+            <li><a href="#about" className="hover:text-white">Rólunk</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold">Nyitvatartás</h4>
+          <ul className="mt-2 space-y-1 text-sm text-emerald-100/80">
+            <li>Recepció: 8:00 – 20:00</li>
+            <li>Bejelentkezés: 14:00 – 20:00</li>
+            <li>Kijelentkezés: 10:00-ig</li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold">Közösségi</h4>
+          <p className="text-emerald-100/80 mt-2 text-sm">
+            Kövessen minket újdonságokért és akciókért!
+          </p>
+          <div className="mt-3 flex gap-3">
+            <a href="#" className="text-emerald-100/80 hover:text-white">Facebook</a>
+            <a href="#" className="text-emerald-100/80 hover:text-white">Instagram</a>
+          </div>
         </div>
       </div>
-    </div>
-  )
+      <div className="border-t border-emerald-700">
+        <div className="max-w-7xl mx-auto px-6 py-4 text-sm text-emerald-100/70 flex items-center justify-between">
+          <span>© {new Date().getFullYear()} Zöld Liget Panzió</span>
+          <a href="#contact" className="hover:text-white">Kapcsolat</a>
+        </div>
+      </div>
+    </footer>
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <div className="min-h-screen bg-emerald-50 text-emerald-900">
+      <Navbar />
+      <Hero />
+      <Rooms />
+      <Facilities />
+      <Contact />
+      <Footer />
+    </div>
+  );
+}
